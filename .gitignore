@@ -31,3 +31,15 @@ lerna-debug.log*
 
 # misc
 .DS_Store
+
+# cleanup protection - prevent garbage files
+*.bak
+*.old
+*_old.*
+*_new.*
+*_backup.*
+debug*
+test_*
+temp_*
+tmp_*
+*.tmp
