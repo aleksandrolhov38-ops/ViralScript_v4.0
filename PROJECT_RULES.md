@@ -3,10 +3,16 @@
 ## 🎯 **ОСНОВНАЯ ИНФОРМАЦИЯ ПРОЕКТА**
 
 - **Название**: ViralScript AI v4.0 (code_name: webapp)
-- **Workflow**: GitHub + Live Site + Sandbox Development
+- **Workflow**: 🔄 **УТВЕРЖДЕН** - см. WORKFLOW.md
 - **Директория**: `/home/user/webapp/` (ОБЯЗАТЕЛЬНО)
 - **GitHub**: https://github.com/aleksandrolhov38-ops/ViralScript_v4.0
 - **Live Site**: https://webapp-309.pages.dev
+
+## ⚡ **БЫСТРАЯ СПРАВКА ПО WORKFLOW**
+1. **Разработка:** Локально в `/home/user/webapp/`
+2. **Демонстрация:** GetServiceUrl(port=3000) → показ пользователю  
+3. **Production:** `git push origin main` → auto-deploy
+4. **Документация:** WORKFLOW.md - полные инструкции
 
 ---
 
