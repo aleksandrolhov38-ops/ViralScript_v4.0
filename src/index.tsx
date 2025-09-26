@@ -6858,4 +6858,7 @@ function getModuleContent(moduleName: string): string {
   throw new Error(`Unknown module: ${moduleName}`);
 }
 
-export default app
+// ВРЕМЕННО: Maintenance mode для приватности
+// export default app
+import maintenance from './maintenance.tsx'
+export default maintenance
