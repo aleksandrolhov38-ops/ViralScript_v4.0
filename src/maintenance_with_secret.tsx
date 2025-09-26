@@ -194,8 +194,8 @@ app.get(SECRET_PATH, (c) => {
             });
             
             document.getElementById(tabName).classList.add('active');
-            document.querySelector('[data-tab="' + tabName + '"]').classList.add('border-red-600', 'text-red-600');
-            document.querySelector('[data-tab="' + tabName + '"]').classList.remove('border-transparent', 'text-gray-500');
+            document.querySelector(\`[data-tab="\${tabName}"]\`).classList.add('border-red-600', 'text-red-600');
+            document.querySelector(\`[data-tab="\${tabName}"]\`).classList.remove('border-transparent', 'text-gray-500');
         }
 
         // Заглушки для модальных окон
@@ -226,7 +226,7 @@ app.get(SECRET_PATH, (c) => {
 
 // Все остальные запросы - показываем maintenance
 app.all('*', (c) => {
-  return c.html(`
+  return c.html(\`
 <!DOCTYPE html>
 <html>
 <head>
@@ -249,7 +249,7 @@ app.all('*', (c) => {
         <small style="color: #999;">ViralScript AI v4.0</small>
     </div>
 </body>
-</html>`, 503)
+</html>\`, 503)
 })
 
 export default app
