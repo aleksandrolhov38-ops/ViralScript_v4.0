@@ -1,0 +1,40 @@
+name: 🧪 Test Build Only (без деплоя)
+
+on:
+  workflow_dispatch: # Ручной запуск
+
+jobs:
+  build-test:
+    runs-on: ubuntu-latest
+    name: 🏗️ Test Build Process
+    
+    steps:
+      - name: 📥 Checkout repository
+        uses: actions/checkout@v4
+
+      - name: 🔧 Setup Node.js 18
+        uses: actions/setup-node@v4
+        with:
+          node-version: '18'
+          cache: 'npm'
+
+      - name: 📦 Install dependencies
+        run: npm ci
+
+      - name: 🏗️ Build ViralScript AI
+        run: npm run build
+
+      - name: 📊 Build Summary
+        run: |
+          echo "✅ Build completed successfully!"
+          echo "📦 Generated files:"
+          ls -la dist/
+          echo "📏 Bundle size:"
+          du -h dist/
+          echo "🎉 Ready for manual deploy to Cloudflare Pages"
+
+      - name: 📤 Upload build artifacts
+        uses: actions/upload-artifact@v3
+        with:
+          name: dist-files
+          path: dist/
